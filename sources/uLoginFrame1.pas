@@ -42,7 +42,6 @@ type
     AuthenticateLabel: TLabel;
     Label1: TLabel;
     procedure VertScrollBox1Resize(Sender: TObject);
-    procedure TelefonoEditExit(Sender: TObject);
   private
     { Private declarations }
   public
@@ -55,14 +54,6 @@ implementation
 
 uses
   Telefonos.Utils;
-
-procedure TLoginFrame1.TelefonoEditExit(Sender: TObject);
-begin
-  var tel:string := TEdit(Sender).Text;
-  // "Limpiar" el teléfono de caracteres extraños
-  tel := TTelefonoUtils.Limpiar(TEdit(Sender).Text);
-  TEdit(Sender).Text := tel;
-end;
 
 procedure TLoginFrame1.VertScrollBox1Resize(Sender: TObject);
 begin

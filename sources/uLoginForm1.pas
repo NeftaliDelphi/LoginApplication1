@@ -16,12 +16,13 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
-  FMX.Layouts, uLoginFrame1;
+  FMX.Layouts, uLoginFrame1, FMX.Controls.Presentation, FMX.Edit;
 
 type
   TForm1Login = class(TForm)
     EmeraldCrystalStyleBook: TStyleBook;
     LoginFrame11: TLoginFrame1;
+    procedure LoginFrame11TelefonoEditExit(Sender: TObject);
     
   private
     { Private declarations }
@@ -36,10 +37,21 @@ implementation
 
 {$R *.fmx}
 
+uses
+  Telefonos.Utils;
+
 // Changes to the layout should be made inside of the TFrame itself. Once changes are made
 // to the TFrame you can delete it from the TForm and re-add it. Set its Align property to
 // Client. Optionally, it's ClipChildren property can be set to True if there are any overlapping
 // background images.
 
+
+procedure TForm1Login.LoginFrame11TelefonoEditExit(Sender: TObject);
+begin
+  var tel:string := TEdit(Sender).Text;
+  // "Limpiar" el teléfono de caracteres extraños
+  tel := TTelefonoUtils.Limpiar(TEdit(Sender).Text);
+  TEdit(Sender).Text := tel;
+end;
 
 end.
