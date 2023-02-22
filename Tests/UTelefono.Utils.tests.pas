@@ -43,7 +43,7 @@ end;
 
 procedure TTelefonoUtilsTests.ProcedimientoLimpiar(const AValue1, AValue2: string);
 begin
-  Assert.AreEqual(TTelefonoUtils.Limpiar(AValue1), AValue2);
+  Assert.AreEqual(AValue2, TTelefonoUtils.Limpiar(AValue1));
 end;
 
 initialization
