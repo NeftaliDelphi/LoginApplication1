@@ -21,7 +21,7 @@ uses
 
 class function TTelefonoUtils.Limpiar(const ATelefono:string):string;
 const
-  ARRAY_CHAR = ['(', ')', ' ', '-', '.', '+'];
+  ARRAY_CHAR = ['(', ')', ' ', '-', '+'];
 begin
   Result := ATelefono;
   for var ch:Char in ARRAY_CHAR do
