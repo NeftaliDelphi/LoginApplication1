@@ -58,10 +58,8 @@ uses
 
 procedure TLoginFrame1.TelefonoEditExit(Sender: TObject);
 begin
-  var tel:string := TEdit(Sender).Text;
   // "Limpiar" el teléfono de caracteres extraños
-  tel := TTelefonoUtils.Limpiar(TEdit(Sender).Text);
-  TEdit(Sender).Text := tel;
+  TEdit(Sender).Text := TTelefonoUtils.Limpiar(TEdit(Sender).Text);
 end;
 
 procedure TLoginFrame1.VertScrollBox1Resize(Sender: TObject);
