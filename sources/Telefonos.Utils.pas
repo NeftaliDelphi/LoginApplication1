@@ -20,8 +20,13 @@ uses
 
 
 class function TTelefonoUtils.Limpiar(const ATelefono:string):string;
+const
+  ARR_CHAR = ['(',')','.','-',' ','+'];
 begin
-  //...
+  Result := ATelefono;
+  for var ch:char in ARR_CHAR do
+    Result := ReplaceText(Result, ch, '');
+
 end;
 
 end.
